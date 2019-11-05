@@ -119,7 +119,8 @@ function MP3_system(){
 */
 }
 //****************************************************************************************
- function MediaDetect(){
+//Funkce slouzi k detekovani FLASH disku 
+function MediaDetect(){
  	if(process.platform == "linux"){
  		fs.exists('/media/pi', (exists) => {
 		    fs.watch('/media/pi', (eventType, fsname) => {
@@ -151,9 +152,7 @@ if(process.platform == "win32"){
 }
 }
 //*************************************************************************** 
-//$("#song"+x).hide(0); 
-      
-//$("#song"+last).show(500); 
+//Funkce uklada data do souboru backup.ini
 function MP3_Backup(){
 	fs.writeFile("backup.ini",JSON.stringify(MP3), function(err) {
 	    if(err) {
@@ -221,7 +220,6 @@ function End_load(){
 			document.getElementById("player_file_explorer").innerHTML =content;
 		}
 		vl=audio.volume;
-		//$('#screen').show(500);
 	}
 //*****************************Pro stranku player*********************************
 	if(side==1){
@@ -273,7 +271,7 @@ function MP3_List(x){
 	}
 }
 //*************************************************************************/
-/*
+/* Poznamky
 indicator=0;//Pro ikony pod spektrem
 loop=1,random=2,kos=4,volume=8,end=16,user=32;
 notification=0;
@@ -296,15 +294,14 @@ function MP3_SongPlay(operace){
 	}
 
 	if(audio.paused==true && side==1 ){
-		document.getElementById("player_play_pause").innerHTML= "<img src='Icons/Icons3/play1.png' width='40px;' height='40px;'' style='position: relative;top:10px;'>";
-		//document.getElementById("player_play_pause").innerHTML= "<img src='Icons/Icons3/pause.png' width='40px;' height='40px;'' style='position: relative;top:10px;'>";
+		document.getElementById("player_play_pause").innerHTML= "<img src='Icons/Icons3/play1.png' width='40px;' height='40px;'' style='position: relative;top:10px;'>";	
 	}
 	if((audio.paused && MP3.indicator & end) || (operace & t_zobraz) || audio.paused == false  && side==1 ){ 
 		var orez=MP3.play_song[MP3.current_Songnumber].search(".mp3");//nalezeni pozice .mp3
 		document.getElementById("player_song_name").innerHTML = MP3.play_song[MP3.current_Songnumber].substring(0,orez);//odstraneni .mp3 z nazvu
 		operace&=~t_zobraz;
 	}	
-	//Kvuli zobrazeni nazvu pisne po zapnuti playeru z backup 					
+	//Zobrazeni nazvu pisne po zapnuti playeru z backup 					
 	/*if(side==1 && operace & t_zobraz){
 		//var orez=MP3.play_song[MP3.current_Songnumber].search(".mp3");//nalezeni pozice .mp3
 		//document.getElementById("player_song_name").innerHTML = MP3.play_song[MP3.current_Songnumber].substring(0,orez);//odstraneni .mp3 z nazvu
@@ -354,7 +351,7 @@ function MP3_NextSong(button){
 		MP3.play_song.splice(MP3.play_song.indexOf(MP3.play_song[MP3.current_Songnumber]),1);//odstraneni songu z bufferu
 	}
 	/*********************************random a loop****************************/
-	//loop=1,random=2,kos=4;
+	//loop=1,random=2,kos=4; Poznamky
 	if(MP3.indicator & random){
 		if(Songhistory.length<=MP3.play_song.length){
 			var i=0;
