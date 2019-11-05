@@ -1,0 +1,11 @@
+Player má nahradit autoradio 
+
+Jeho funkce
+1) Vybrání skladby ve složce, buď to z interní paměti nebo z externího uložiště jakým je například USB disk
+2) posunutí skladby v před nebo nazpět
+3) stopnutí skladby
+4) funkce náhodného přehrání
+5) automatcké přehrávání podsložek
+6) ovládání hlasitosti
+7) smazání skladby po skončení přehrávání, pokud se dotyčnému skladba nelíbí
+8) automatický reload od místa kde se přehrávalo než se zařízení vypnulo
