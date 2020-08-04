@@ -1,11 +1,11 @@
 Postaveno na Raspberry Pi
-Player má nahradit autoradio jedná o vlastní projekt
-Některé funkce nejsou zcela dodělány a otestovány
+Player má nahradit autoradio, jedná o vlastní projekt.
+Některé funkce nejsou zcela dodělány a otestovány,
 další funkce budou přidávány na základě potřeby a požadavků
 
 funkce
-1) Vybrání skladby ve složce, buď to z interní paměti nebo z externího uložiště jakým je například USB disk
-2) posunutí skladby v před nebo nazpět
+1) vybrání skladby ve složce, buď to z interní paměti nebo z externího uložiště jakým je například USB disk
+2) posunutí skladby vpřed nebo nazpět
 3) play a pause skladby
 4) funkce náhodného přehrání
 5) automatcké přehrávání podsložek
